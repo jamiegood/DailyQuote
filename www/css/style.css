@@ -1,0 +1,26 @@
+/* Empty. Add your own CSS if you like */
+
+.jamie {
+
+	border: 2px solid blue;
+
+	background-size: cover;
+	background-image: url("http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg");
+}
+
+
+.box  {
+
+	display: block;
+	border-radius: 15px;
+	background-color: #FFFFFF;
+	opacity: .5;
+	color: #000000;
+
+}
+
+
+.inside {
+
+	opacity: 1;
+}

@@ -1,0 +1,24 @@
+<ion-view view-title="Favourites">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="quote in quotes track by $index" type="item-text-wrap" href="#/tab/favourites/{{quote.id}}">
+        <img ng-src="{{quote.face}}">
+        <h2>{{quote.name}}</h2>
+        <p>{{quote.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove($index)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+
+
+    <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
+<button onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')">message and subject</button>
+<button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.x-services.nl')">link only</button>
+<button onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://www.x-services.nl')">message and link</button>
+<button onclick="window.plugins.socialsharing.share(null, null, 'https://www.google.nl/images/srpr/logo4w.png', null)">image only</button>
+
+  </ion-content>
+</ion-view>

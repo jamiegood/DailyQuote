@@ -1,0 +1,25 @@
+<ion-view view-title="Daily Quotes" class="zjamie">
+    <ion-nav-buttons side="left">    
+        <button class="button" ng-click="showShare()">
+            <i class="icon ion-share"></i>
+        </button>
+    </ion-nav-buttons>    
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="save(quote.id)">
+            <i class="icon ion-bookmark"></i>
+        </button>        
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false" >
+            <ion-slide ng-repeat="quote in quotes track by $index">
+                <div class="box">
+                    <div class="inside">
+                        <h1>{{quote.id}}</h1>
+                        <h1>{{quote.name}}</h1>
+                        <p>{{$index}}</p>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>
