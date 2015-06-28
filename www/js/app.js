@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic.service.core'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,7 +24,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 .constant('config', {
   localStorageKey: 'favourites'
 })
-
+.config(['$ionicAppProvider', function($ionicAppProvider) {
+  // Identify app
+  $ionicAppProvider.identify({
+    // The App ID (from apps.ionic.io) for the server
+    app_id: 'eeaac208',
+    // The public API key all services will use for this app
+    api_key: '077ad1cd708e0e42cdba26424d1601de03a24de3906fb039',
+    // The GCM project ID (project number) from your Google Developer Console (un-comment if used)
+    // gcm_id: 'YOUR_GCM_ID'
+  });
+}])
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
