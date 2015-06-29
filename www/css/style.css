@@ -2,10 +2,8 @@
 
 .jamie {
 
-	border: 2px solid blue;
-
 	background-size: cover;
-	background-image: url("http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg");
+	/*background-image: url("http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg");*/
 }
 
 
@@ -13,8 +11,6 @@
 
 	display: block;
 	border-radius: 15px;
-	background-color: #FFFFFF;
-	opacity: .5;
 	color: #000000;
 
 }

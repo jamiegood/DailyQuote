@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic.service.core'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic.service.core', 'ngCordova', 'ionic.service.push'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -33,6 +33,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     api_key: '077ad1cd708e0e42cdba26424d1601de03a24de3906fb039',
     // The GCM project ID (project number) from your Google Developer Console (un-comment if used)
     // gcm_id: 'YOUR_GCM_ID'
+       // Set the app to use development pushes
+    dev_push: true
   });
 }])
 .config(function($stateProvider, $urlRouterProvider) {

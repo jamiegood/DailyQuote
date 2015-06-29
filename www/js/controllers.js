@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, $ionicActionSheet, Quotes, FavouritesService, config) {
+.controller('HomeCtrl', function($scope, $ionicActionSheet, Quotes, FavouritesService, config, $ionicLoading) {
 
   //create actionSheet for share options.
   $scope.quotes = Quotes.all();
@@ -18,6 +18,8 @@ angular.module('starter.controllers', [])
     FavouritesService.add(config.localStorageKey, favQuote);
     console.log(FavouritesService.list(config.localStorageKey));
 
+    $ionicLoading.show({ template: 'Added to favourites', noBackdrop: true, duration: 2000 });    
+
    }
 
    $scope.slideHasChanged = function(index) {
@@ -29,6 +31,13 @@ angular.module('starter.controllers', [])
 
    }
 
+
+  var backgrounds = [
+    'http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg', 
+    'http://ezscrap.net/wp-content/uploads/2008/12/shapes8-square1.gif', 
+    'http://2.bp.blogspot.com/-bD5LhqZOyoA/UUMsmxi-uKI/AAAAAAAAC9E/tfWwQW31pUA/s1600/shapes2.png'];
+
+  $scope.randomBg = backgrounds[Math.round(Math.random() * (backgrounds.length - 1))];
 
 })
 
