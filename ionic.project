@@ -1,4 +1,12 @@
 {
   "name": "DailyQuote",
-  "app_id": "eeaac208"
+  "app_id": "eeaac208",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
