@@ -1,40 +1,16 @@
 angular.module('starter.services', [])
 
-.factory('Quotes', function() {
+.factory('Quotes', function(QuotesLibrary) {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var quotes = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  },{
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
-  }];
 
   console.log('quotes library');
   //console.log(QuotesLibrary.all());
 
   return {
+    prime: function() {
+      quotes = QuotesLibrary.getData();
+    },
     all: function() {
       return quotes;
     },
@@ -71,7 +47,70 @@ angular.module('starter.services', [])
     }
   }
 }])
+.factory('QuotesLibrary', function($window, $q, $timeout, $http) {
+  // Might use a resource here that returns a JSON array
 
+  // function($resource){
+  //   return $resource('/api/:quoteId.json', {}, {
+  //     query: {method:'GET', params:{quoteId:'quotes'}, isArray:true}
+  //   });
+    var quotes = [];
+
+  // Simple GET request example :
+  // return {
+  //   store: function() {
+  //     $http.get('/api/quotes.json').
+  //       success(function(data, status, headers, config) {
+  //         // this callback will be called asynchronously
+  //         // when the response is available
+  //         console.log(data);
+  //       }).
+  //       error(function(data, status, headers, config) {
+  //         // called asynchronously if an error occurs
+  //         // or server returns response with an error status.
+  //         console.log(data);
+  //     });    
+
+  //   }
+  //}
+  
+  var defer = $q.defer();
+      console.log('I am here');
+
+  return {
+    getData: function() {
+      return quotes;
+    },
+    store: function() {
+
+      console.log('I am in User.checkSession');
+
+
+        console.log('User.checkSession has User.session_id');
+
+        // $timeout(function() {
+        //   console.log('I am timeout ');
+        //   defer.resolve(true);
+        // }, 4000);
+
+      //Simple GET request example :
+      $http.get('/api/quotes.json').
+        success(function(data, status, headers, config) {
+          console.log(' am inside http ccall')
+          console.log(data);
+          quotes = data;
+          defer.resolve(true);
+        }).
+        error(function(data, status, headers, config) {
+          console.log("fail town", data, status, headers, config);
+          defer.resolve(false);
+        });
+
+      return defer.promise;
+    }
+  }
+
+})
 .factory('FavouritesService', ['$window', '$localstorage', function($window, $localstorage) {
 
 
@@ -142,14 +181,4 @@ angular.module('starter.services', [])
   }
 
 }]);
-
-
-angular.module('starter.services2', [])
-.factory('QuotesLibrary', function() {
-  // Might use a resource here that returns a JSON array
-
-  return {};
-
-
-});
 

@@ -7675,6 +7675,10 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.scroll-bg {
+  background: url('http://ioniconf.com/img/bg.jpg') no-repeat center center fixed;
+  background-size: cover; }
+
 /* Empty. Add your own CSS if you like */
 .jamie {
   background-size: cover;
@@ -7688,3 +7692,35 @@ a.button {
 
 .inside {
   opacity: 1; }
+
+.bar-header-test {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  /* or transparent, or background:none */ }
+
+.scroll-content {
+  overflow: visible !important; }
+
+.tabs {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  /* or transparent, or background:none */
+  broder: 1px solid red !important; }
+
+#arrow-nav {
+  margin-top: 50px;
+  border: 1px solid blue;
+  height: 25px;
+  display: block; }
+
+#arrow-left {
+  border: 1px solid red;
+  width: 40px;
+  float: left; }
+
+#arrow-right {
+  border: 1px solid red;
+  width: 40px;
+  float: right; }
+
+#overlay-tips {
+  border: 1px solid red;
+  height: 500px; }

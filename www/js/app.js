@@ -20,6 +20,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   });
 })
+.run(function($ionicUser, $ionicPush, $localstorage) {
+
+
+
+    var user = $ionicUser.get();
+    if(!user.user_id) {
+      // Set your user_id here, or generate a random one.
+      user.user_id = $ionicUser.generateGUID();
+    };
+
+    // Add some metadata to your user object.
+    angular.extend(user, {
+      name: 'Ionitron',
+      bio: 'I am the bio',
+      reminder: $localstorage.get('reminder', false)
+    });
+  $ionicPush.register({
+    canShowAlert: true, //Should new pushes show an alert on your screen?
+    canSetBadge: true, //Should new pushes be allowed to update app icon badges?
+    canPlaySound: false, //Should notifications be allowed to play a sound?
+    canRunActionsOnWake: true, // Whether to run auto actions outside the app,
+    onNotification: function(notification) {
+      // Called for each notification.
+    }
+  }, user);
+
+})
 // API config
 .constant('config', {
   localStorageKey: 'favourites'
@@ -61,7 +88,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         templateUrl: 'templates/tab-home.html',
         controller: 'HomeCtrl'
       }
+    },
+    // resolve: {
+    //   populateSession: function(QuotesLibrary) {
+    //     QuotesLibrary.store();
+    //   }
+    // },    
+    resolve: {
+      greeting: function(QuotesLibrary){
+        return QuotesLibrary.store();
+      }          
     }
+
   })
 
   .state('tab.favourites', {

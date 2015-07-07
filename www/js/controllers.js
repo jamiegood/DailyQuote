@@ -1,11 +1,24 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, $ionicActionSheet, Quotes, FavouritesService, config, $ionicLoading) {
+.controller('HomeCtrl', function($scope, $ionicActionSheet, Quotes, FavouritesService, config, $timeout, $ionicLoading, $ionicBackdrop, $ionicPopup) {
 
   //create actionSheet for share options.
+  Quotes.prime();
+  
   $scope.quotes = Quotes.all();
   var favQuote = false,
     currentQuoteID = 0;
+
+
+  //Show a backdrop for one second
+  $scope.action = function() {
+    $ionicLoading.show({
+      template: '<div id="overlay-tips">Loadingdddddd...</div>'
+    });
+  };
+  $scope.hide = function(){
+    $ionicLoading.hide();
+  };
 
   $scope.showShare = function(quote, event) {
     window.plugins.socialsharing.share('Message only')
@@ -38,6 +51,26 @@ angular.module('starter.controllers', [])
     'http://2.bp.blogspot.com/-bD5LhqZOyoA/UUMsmxi-uKI/AAAAAAAAC9E/tfWwQW31pUA/s1600/shapes2.png'];
 
   $scope.randomBg = backgrounds[Math.round(Math.random() * (backgrounds.length - 1))];
+
+
+  // .fromTemplate() method
+  var template = '<ion-popover-view><ion-header-bar> <h1 class="title">My Popover Title</h1> </ion-header-bar> <ion-content> Hello! </ion-content></ion-popover-view>';
+
+
+
+ // An alert dialog
+ $scope.showAlert = function() {
+   var alertPopup = $ionicPopup.alert({
+     title: 'Don\'t eat that!',
+     template: 'It might taste good'
+   });
+   alertPopup.then(function(res) {
+     console.log('Thank you for not eating my delicious ice cream cone');
+   });
+ };
+
+
+
 
 })
 
@@ -78,33 +111,89 @@ angular.module('starter.controllers', [])
 .controller('FavouritesDetailCtrl', function($scope, $stateParams, FavouritesService, config) {
   
   console.log('indse the FavouritesDetailCtrl');
-  console.log()
   $scope.quote = FavouritesService.find(config.localStorageKey, $stateParams.favId);
   console.log($scope.quote);
 
 })
 
-.controller('SettingsCtrl', function($scope) {
+.controller('SettingsCtrl', function($scope, $rootScope,  $ionicUser, $ionicPush, $localstorage) {
 
+  console.log('CURRENT REMINDER localStorageKey', $localstorage.get('reminder', false));
 
-  $scope.settings = {
-    enableReminders: false
-  };
+  // $scope.settings = {
+  //   enableReminders: $localstorage.get('reminder')
+  // };
 
-  console.log($scope.settings);
+  $scope.settings = {};
 
+  if($localstorage.get('reminder') === 'true') {
+    $scope.settings.enableReminders = true;
+  } else {
+    $scope.settings.enableReminders = false;
+  }
 
-  //watcht this one for changes.
-  $scope.$watch( function(scope) {
-    return $scope.settings.enableReminders;
-  }, function(data) {
+  $scope.saveSettings = function() {
+    console.log('cliked save settings', $scope.settings.enableReminders);
 
-    if(data) {
-      console.log('do somehting');      
+    if( $scope.settings.enableReminders) {
+      console.log('do somehting');   
+      $localstorage.set('reminder', true);
     } else {
       console.log('DOnt do somehting');
+      $localstorage.set('reminder', false);
     }
+  }
 
-  })
+    // Handles incoming device tokens
+    $rootScope.$on('$cordovaPush:tokenReceived', function(event, data) {
+      alert("Successfully registered token " + data.token);
+      console.log('Ionic Push: Got token ', data.token, data.platform);
+      $scope.token = data.token;
+    });
 
+
+  // Identifies a user with the Ionic User service
+  $scope.identifyUser = function() {
+    console.log('Ionic User: Identifying with Ionic User service');
+
+
+
+
+    var user = $ionicUser.get();
+    if(!user.user_id) {
+      // Set your user_id here, or generate a random one.
+      user.user_id = $ionicUser.generateGUID();
+    };
+
+    // Add some metadata to your user object.
+    angular.extend(user, {
+      name: 'Ionitron',
+      bio: 'I am the bio',
+      dailyReminder: true
+    });
+
+    // Identify your user with the Ionic User Service
+    $ionicUser.identify(user).then(function(){
+      $scope.identified = true;
+      alert('Identified user ' + user.name + '\n ID ' + user.user_id);
+    });
+  };
+
+  // Registers a device for push notifications and stores its token
+  $scope.pushRegister = function() {
+    console.log('Ionic Push: Registering user');
+
+    // Register with the Ionic Push service.  All parameters are optional.
+    $ionicPush.register({
+      canShowAlert: true, //Can pushes show an alert on your screen?
+      canSetBadge: true, //Can pushes update app icon badges?
+      canPlaySound: true, //Can notifications play a sound?
+      canRunActionsOnWake: true, //Can run actions outside the app,
+      onNotification: function(notification) {
+        // Handle new push notifications here
+        // console.log(notification);
+        return true;
+      }
+    });
+  };
 });

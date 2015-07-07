@@ -24,6 +24,12 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 $big-bg:      'http://ioniconf.com/img/bg.jpg';
 
+.scroll-bg {
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+$positive:                        #057b6c !default;
 
 /* Empty. Add your own CSS if you like */
 
@@ -49,4 +55,47 @@ $big-bg:      'http://ioniconf.com/img/bg.jpg';
 	opacity: 1;
 }
 
+.bar-header-test {
+  background-color: rgba(255,255,255,.8) !important; /* or transparent, or background:none */
+}
+
+.bar.bar-calm {
+
+}
+.scroll-content {
+  overflow: visible !important;
+}
+
+
+.tabs {
+	  background-color: rgba(255,255,255,.8) !important; /* or transparent, or background:none */
+	  broder: 1px solid red !important;
+}
+
+
+#arrow-nav {
+	margin-top: 50px;
+	border: 1px solid blue;
+	height: 25px;
+	display: block;	
+
+}
+
+#arrow-left {
+	border: 1px solid red;
+	width: 40px;
+	float: left;
+}
+
+#arrow-right {
+	border: 1px solid red;
+	width: 40px;
+	float: right;
+}
+
+#overlay-tips {
+	
+	border: 1px solid red;
+	height: 500px;
+}
 
