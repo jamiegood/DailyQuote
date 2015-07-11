@@ -69,11 +69,11 @@ angular.module('starter.services', [])
   //         // called asynchronously if an error occurs
   //         // or server returns response with an error status.
   //         console.log(data);
-  //     });    
+  //     });
 
   //   }
   //}
-  
+
   var defer = $q.defer();
       console.log('I am here');
 
@@ -117,6 +117,7 @@ angular.module('starter.services', [])
   var separator = '|';
   var list_array =[];
 
+  /* this is a comment */
 
   return {
     favourites: [],
@@ -136,7 +137,7 @@ angular.module('starter.services', [])
     },
     getObject: function(key) {
       return $localstorage.getObject(key);
-    },    
+    },
     getObject: function(key, value) {
       return $localstorage.getObject(key);
     },
@@ -154,11 +155,11 @@ angular.module('starter.services', [])
       var list = $localstorage.get(key, '');
       // explode to an array
       var list_array =[];
-      
+
       if(list !== '') {
         list_array = list.split("|");
         console.log("list not enough to space");
-      } 
+      }
       var i;
 
       for(i =0; i <list_array.length; i++) {
@@ -169,7 +170,7 @@ angular.module('starter.services', [])
       this.favourites = list_array;
       return list_array;
 
-    }, 
+    },
     getStore: function() {
       return list_array;
     },
@@ -181,4 +182,3 @@ angular.module('starter.services', [])
   }
 
 }]);
-

@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 
   //create actionSheet for share options.
   Quotes.prime();
-  
+
   $scope.quotes = Quotes.all();
   var favQuote = false,
     currentQuoteID = 0;
@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
 
   $scope.showShare = function(quote, event) {
     window.plugins.socialsharing.share('Message only')
-   };  
+   };
 
    $scope.save = function() {
     console.log('save quote');
@@ -31,7 +31,7 @@ angular.module('starter.controllers', [])
     FavouritesService.add(config.localStorageKey, favQuote);
     console.log(FavouritesService.list(config.localStorageKey));
 
-    $ionicLoading.show({ template: 'Added to favourites', noBackdrop: true, duration: 2000 });    
+    $ionicLoading.show({ template: 'Added to favourites', noBackdrop: true, duration: 2000 });
 
    }
 
@@ -46,8 +46,8 @@ angular.module('starter.controllers', [])
 
 
   var backgrounds = [
-    'http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg', 
-    'http://ezscrap.net/wp-content/uploads/2008/12/shapes8-square1.gif', 
+    'http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg',
+    'http://ezscrap.net/wp-content/uploads/2008/12/shapes8-square1.gif',
     'http://2.bp.blogspot.com/-bD5LhqZOyoA/UUMsmxi-uKI/AAAAAAAAC9E/tfWwQW31pUA/s1600/shapes2.png'];
 
   $scope.randomBg = backgrounds[Math.round(Math.random() * (backgrounds.length - 1))];
@@ -109,7 +109,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('FavouritesDetailCtrl', function($scope, $stateParams, FavouritesService, config) {
-  
+
   console.log('indse the FavouritesDetailCtrl');
   $scope.quote = FavouritesService.find(config.localStorageKey, $stateParams.favId);
   console.log($scope.quote);
@@ -136,7 +136,7 @@ angular.module('starter.controllers', [])
     console.log('cliked save settings', $scope.settings.enableReminders);
 
     if( $scope.settings.enableReminders) {
-      console.log('do somehting');   
+      console.log('do somehting');
       $localstorage.set('reminder', true);
     } else {
       console.log('DOnt do somehting');
