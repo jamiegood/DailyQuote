@@ -94,7 +94,7 @@ angular.module('starter.services', [])
         // }, 4000);
 
       //Simple GET request example :
-      $http.get('/api/quotes.json').
+      $http.get('api/quotes.json').
         success(function(data, status, headers, config) {
           console.log(' am inside http ccall')
           console.log(data);

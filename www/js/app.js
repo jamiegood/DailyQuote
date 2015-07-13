@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     // The GCM project ID (project number) from your Google Developer Console (un-comment if used)
     // gcm_id: 'YOUR_GCM_ID'
        // Set the app to use development pushes
-    dev_push: true
+  //  dev_push: true
   });
 }])
 .config(function($stateProvider, $urlRouterProvider) {
@@ -93,17 +93,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     //   populateSession: function(QuotesLibrary) {
     //     QuotesLibrary.store();
     //   }
-    // },    
+    // },
     resolve: {
       greeting: function(QuotesLibrary){
         return QuotesLibrary.store();
-      }          
+      }
     }
 
   })
 
   .state('tab.favourites', {
-      url: '/favourites',  
+      url: '/favourites',
       views: {
         'tab-favourites': {
           templateUrl: 'templates/tab-favourites.html',
