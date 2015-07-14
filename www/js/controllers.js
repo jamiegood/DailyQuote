@@ -24,7 +24,11 @@ angular.module('starter.controllers', [])
     window.plugins.socialsharing.share('Message only')
    };
 
+   $scope.animateClass = false;
+
    $scope.save = function() {
+
+    $scope.animateClass = true;
     console.log('save quote');
     var favQuote = angular.copy($scope.quotes[currentQuoteID]);
     console.log(favQuote);
@@ -32,6 +36,8 @@ angular.module('starter.controllers', [])
     console.log(FavouritesService.list(config.localStorageKey));
 
     $ionicLoading.show({ template: 'Added to favourites', noBackdrop: true, duration: 2000 });
+
+
 
    }
 

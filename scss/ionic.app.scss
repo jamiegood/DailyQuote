@@ -46,6 +46,12 @@ $positive:                        #057b6c !default;
 	border-radius: 15px;
 	color: #000000;
 	border: 1px solid $royal;
+  -webkit-transition: width 2s ease, height 2s ease;
+	-moz-transition: width 2s ease, height 2s ease;
+	-o-transition: width 2s ease, height 2s ease;
+	transition: width 2s ease, height 2s ease;
+  // height: 100px;
+  // width: 100px;
 
 }
 
@@ -53,8 +59,16 @@ $positive:                        #057b6c !default;
 .inside {
 
 	opacity: 1;
+
+
 }
 
+
+.animateMeNow {
+  border: 10px solid red;
+  width: 300px;
+  height: 500px;
+}
 .bar-header-test {
   background-color: rgba(255,255,255,.8) !important; /* or transparent, or background:none */
 }
@@ -77,7 +91,7 @@ $positive:                        #057b6c !default;
 	margin-top: 50px;
 	border: 1px solid blue;
 	height: 25px;
-	display: block;	
+	display: block;
 
 }
 
@@ -94,8 +108,7 @@ $positive:                        #057b6c !default;
 }
 
 #overlay-tips {
-	
+
 	border: 1px solid red;
 	height: 500px;
 }
-

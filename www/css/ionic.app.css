@@ -7688,10 +7688,19 @@ a.button {
   display: block;
   border-radius: 15px;
   color: #000000;
-  border: 1px solid #886aea; }
+  border: 1px solid #886aea;
+  -webkit-transition: width 2s ease, height 2s ease;
+  -moz-transition: width 2s ease, height 2s ease;
+  -o-transition: width 2s ease, height 2s ease;
+  transition: width 2s ease, height 2s ease; }
 
 .inside {
   opacity: 1; }
+
+.animateMeNow {
+  border: 10px solid red;
+  width: 300px;
+  height: 500px; }
 
 .bar-header-test {
   background-color: rgba(255, 255, 255, 0.8) !important;

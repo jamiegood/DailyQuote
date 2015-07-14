@@ -158,12 +158,15 @@ angular.module('starter.services', [])
 
       if(list !== '') {
         list_array = list.split("|");
+        console.log(list_array);
         console.log("list not enough to space");
       }
       var i;
 
       for(i =0; i <list_array.length; i++) {
         console.log(i);
+        console.log(list_array[i]);
+        
         var example = list_array[i];
         list_array[i] = JSON.parse(example);
       }
