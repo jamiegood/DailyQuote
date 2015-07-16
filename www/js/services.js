@@ -166,7 +166,7 @@ angular.module('starter.services', [])
       for(i =0; i <list_array.length; i++) {
         console.log(i);
         console.log(list_array[i]);
-        
+
         var example = list_array[i];
         list_array[i] = JSON.parse(example);
       }
@@ -178,8 +178,17 @@ angular.module('starter.services', [])
       return list_array;
     },
     find: function(key, id) {
-      var item = this.list(key);
-      return item[id];
+      var items = this.list(key);
+      var findItem;
+
+      angular.forEach(items, function(item) {
+        console.log(item);
+        if(item.id == id) findItem = item;
+      });
+
+      console.log(findItem);
+      
+      return findItem;
 
     }
   }

@@ -7702,17 +7702,11 @@ a.button {
   width: 300px;
   height: 500px; }
 
-.bar-header-test {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  /* or transparent, or background:none */ }
-
 .scroll-content {
   overflow: visible !important; }
 
-.tabs {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  /* or transparent, or background:none */
-  broder: 1px solid red !important; }
+tab-item-active {
+  border: 2px solid red; }
 
 #arrow-nav {
   margin-top: 50px;
@@ -7733,3 +7727,9 @@ a.button {
 #overlay-tips {
   border: 1px solid red;
   height: 500px; }
+
+ion-tabs.tabs-color-active-positive .tab-item {
+  color: #FFF; }
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+  color: #FFFFFF; }

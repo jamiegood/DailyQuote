@@ -7,7 +7,7 @@ angular.module('starter.services', [])
   var quotes = [{
     id: 0,
     name: 'Ben Sparrow',
-    lastText: 'You on your way?',
+    lastText: 'Mind is everyting. What you think you become',
     face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
   }, {
     id: 1,

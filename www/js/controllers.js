@@ -52,7 +52,7 @@ angular.module('starter.controllers', [])
 
 
   var backgrounds = [
-    'http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg',
+    //'http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg',
     'http://ezscrap.net/wp-content/uploads/2008/12/shapes8-square1.gif',
     'http://2.bp.blogspot.com/-bD5LhqZOyoA/UUMsmxi-uKI/AAAAAAAAC9E/tfWwQW31pUA/s1600/shapes2.png'];
 
