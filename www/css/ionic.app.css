@@ -7692,7 +7692,9 @@ a.button {
   -webkit-transition: width 2s ease, height 2s ease;
   -moz-transition: width 2s ease, height 2s ease;
   -o-transition: width 2s ease, height 2s ease;
-  transition: width 2s ease, height 2s ease; }
+  transition: width 2s ease, height 2s ease;
+  height: 100px;
+  width: 100px; }
 
 .inside {
   opacity: 1; }
@@ -7733,3 +7735,15 @@ ion-tabs.tabs-color-active-positive .tab-item {
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
   color: #FFFFFF; }
+
+.logo {
+  border-radius: 50%;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  -webkit-box-shadow: 8px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 8px 4px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 8px 4px 5px 0px rgba(0, 0, 0, 0.15); }
+
+.save {
+  margin-right: 15px !important; }

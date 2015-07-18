@@ -1,14 +1,19 @@
 <ion-view view-title="Daily Quotes" class="" ng-style="{'background-image':'url({{ randomBg}})'}">>
     <ion-nav-buttons side="left">
+        <button class="button logo" ng-click="">
+            <i class="icon ion-leaf"></i>
+        </button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <button class="button save" ng-click="save(quote.id)">
+            <i class="icon ion-bookmark"></i>
+        </button>
         <button class="button" ng-click="showShare()">
             <i class="icon ion-share"></i>
         </button>
     </ion-nav-buttons>
-    <ion-nav-buttons side="right">
-        <button class="button" ng-click="save(quote.id)">
-            <i class="icon ion-bookmark"></i>
-        </button>
-    </ion-nav-buttons>
+
     <ion-content class="padding" scroll="false">
 
         <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false" >
