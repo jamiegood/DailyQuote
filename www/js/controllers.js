@@ -175,7 +175,7 @@ angular.module('starter.controllers', [])
     angular.extend(user, {
       name: 'Ionitron',
       bio: 'I am the bio',
-      dailyReminder: true
+      reminder: true
     });
 
     // Identify your user with the Ionic User Service
