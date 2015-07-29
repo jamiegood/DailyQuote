@@ -1,4 +1,4 @@
-<ion-view view-title="Daily Quotes" class="" ng-style="{'background-image':'url({{ randomBg}})'}">>
+<ion-view view-title="Daily Quotes" class="jamie" ng-style="{'background-image':'url({{ randomBg}})'}">>
     <ion-nav-buttons side="left">
         <button class="button logo" ng-click="">
             <i class="icon ion-leaf"></i>
@@ -14,28 +14,33 @@
         </button>
     </ion-nav-buttons>
 
-    <ion-content class="padding" scroll="false">
+    <ion-content class="padding" scroll="">
 
         <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false" >
             <ion-slide ng-repeat="quote in quotes track by $index">
                 <div class="box" ng-class="{'animateMeNow' : animateClass}">
                     <div class="inside">
-                        <h1>{{quote.id}}</h1>
-                        <h1>{{quote.name}}</h1>
-                        <p>{{$index}}</p>
+                        <!-- <h1>{{quote.id}}</h1>
+                        <h1>{{quote.name}}</h1> -->
+
+                        <div class="card">
+                          <div class="item item-text-wrap">
+                            <h1>{{quote.lastText}}</h1>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </ion-slide>
         </ion-slide-box>
 
-        <div id="arrow-nav">
+        <!-- <div id="arrow-nav">
             <div id="arrow-left" ng-click="action()">LEFT</div>
             <div id="arrow-right">Right</div>
         </div>
 
     <button class="button button-positive" ng-click="showAlert()">
       Alert
-    </button>
+    </button> -->
 
     <script id="popup-template.html" type="text/ng-template">
       <input ng-model="data.wifi" type="text" placeholder="Password">

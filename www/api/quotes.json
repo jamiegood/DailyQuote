@@ -1,12 +1,12 @@
 [{
     "id": 0,
-    "name": "Ben Sparrow",
-    "lastText:": "You on your way?",
+    "name": "BenX Sparrow",
+    "lastText": "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment",
     "face": "https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png"
   }, {
     "id": 1,
     "name": "Max Lynx",
-    "lastText": "Hey, it's me",
+    "lastText": "You can search throughout the entire universe for someone who is more deserving of your love and affection than you are yourself, and that person is not to be found anywhere. You yourself, as much as anybody in the entire universe deserve your love and affection.",
     "face": "https://avatars3.githubusercontent.com/u/11214?v=3&s=460"
   },{
     "id": 2,
@@ -16,7 +16,7 @@
   },{
     "id": 3,
     "name": "Jamie Good",
-    "lastText": "I should buy a plance",
+    "lastText": "I should buy a plane",
     "face": "https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg"
   }, {
     "id": 4,

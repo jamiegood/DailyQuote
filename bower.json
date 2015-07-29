@@ -6,5 +6,8 @@
     "ionic-service-core": "~0.1.7",
     "ngCordova": "~0.1.17-alpha",
     "ionic-service-push": "~0.1.8"
+  },
+  "dependencies": {
+    "ionic-timepicker": "~0.2.0"
   }
 }

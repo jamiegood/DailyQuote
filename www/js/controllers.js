@@ -126,10 +126,6 @@ angular.module('starter.controllers', [])
 
   console.log('CURRENT REMINDER localStorageKey', $localstorage.get('reminder', false));
 
-  // $scope.settings = {
-  //   enableReminders: $localstorage.get('reminder')
-  // };
-
   $scope.settings = {};
 
   if($localstorage.get('reminder') === 'true') {
@@ -137,6 +133,17 @@ angular.module('starter.controllers', [])
   } else {
     $scope.settings.enableReminders = false;
   }
+
+    $scope.slots = {epochTime: 12600, format: 24, step: 15};
+
+    $scope.timePickerCallback = function (val) {
+      if (typeof (val) === 'undefined') {
+        console.log('Time not selected');
+      } else {
+        console.log('Selected time is : ', val);    // `val` will contain the selected time in epoch
+        $scope.epochTimeX = val;
+      }
+    };
 
   $scope.saveSettings = function() {
     console.log('cliked save settings', $scope.settings.enableReminders);

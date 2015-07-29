@@ -7682,27 +7682,26 @@ a.button {
 /* Empty. Add your own CSS if you like */
 .jamie {
   background-size: cover;
-  /*background-image: url("http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg");*/ }
+  opacity: .1;
+  /*background-image: url("http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg");*/
+  background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-color: transparent; }
 
 .box {
   display: block;
-  border-radius: 15px;
   color: #000000;
-  border: 1px solid #886aea;
   -webkit-transition: width 2s ease, height 2s ease;
   -moz-transition: width 2s ease, height 2s ease;
   -o-transition: width 2s ease, height 2s ease;
   transition: width 2s ease, height 2s ease;
-  height: 100px;
-  width: 100px; }
+  min-height: 200px;
+  margin-top: 20%; }
 
 .inside {
   opacity: 1; }
-
-.animateMeNow {
-  border: 10px solid red;
-  width: 300px;
-  height: 500px; }
 
 .scroll-content {
   overflow: visible !important; }
@@ -7747,3 +7746,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 
 .save {
   margin-right: 15px !important; }
+
+.card h1 {
+  font-size: 30px; }

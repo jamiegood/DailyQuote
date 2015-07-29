@@ -6,9 +6,10 @@
 -->
 <ion-view view-title="{{quote.name}}">
   <ion-content class="padding">
-    <img ng-src="{{quote.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{quote.lastText}}
-    </p>
+    <div class="card">
+      <div class="item item-text-wrap">
+        <h1>{{quote.lastText}}</h1>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

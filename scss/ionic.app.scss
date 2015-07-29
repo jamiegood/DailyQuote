@@ -38,23 +38,31 @@ $positive:                        #057b6c !default;
 .jamie {
 
 	background-size: cover;
+  opacity: .1;
 	/*background-image: url("http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg");*/
+
+  background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+background-color: transparent;
 }
 
 
 .box  {
 
 	display: block;
-	border-radius: 15px;
+	// border-radius: 15px;
 	color: #000000;
-	border: 1px solid $royal;
+	// border: 1px solid $royal;
   -webkit-transition: width 2s ease, height 2s ease;
 	-moz-transition: width 2s ease, height 2s ease;
 	-o-transition: width 2s ease, height 2s ease;
 	transition: width 2s ease, height 2s ease;
-  height: 100px;
-  width: 100px;
-
+  // height: 100px;
+  // width: 100px;
+  min-height: 200px;
+  margin-top: 20%;
 }
 
 
@@ -66,11 +74,11 @@ $positive:                        #057b6c !default;
 }
 
 
-.animateMeNow {
-  border: 10px solid red;
-  width: 300px;
-  height: 500px;
-}
+// .animateMeNow {
+//   border: 10px solid red;
+//   width: 300px;
+//   height: 500px;
+// }
 .bar-header-test {
   //background-color: rgba(255,255,255,.8) !important; /* or transparent, or background:none */
 }
@@ -144,4 +152,14 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 
 .save {
   margin-right: 15px !important;
+}
+
+.item {
+//   text-align: justify;
+// text-justify: inter-cluster;
+}
+
+
+.card h1 {
+  font-size: 30px;
 }
