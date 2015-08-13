@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($scope, $ionicActionSheet, Quotes, FavouritesService, config, $timeout, $ionicLoading, $ionicBackdrop, $ionicPopup) {
+.controller('HomeCtrl', function($scope, $ionicActionSheet, Quotes, FavouritesService, config, $timeout, $ionicLoading, $ionicBackdrop, $ionicPopup,  $ionicScrollDelegate) {
 
   //create actionSheet for share options.
   Quotes.prime();
@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
 
     currentQuoteID = index;
     console.log(currentQuoteID);
-
+    $ionicScrollDelegate.$getByHandle('mainScroll').scrollTop();
    }
 
 
