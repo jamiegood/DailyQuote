@@ -42,10 +42,10 @@ $positive:                        #057b6c !default;
 	/*background-image: url("http://total-yoga.org/wp-content/uploads/2013/03/Buddha-in-Meditation.jpg");*/
 
   background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
-background-color: transparent;
+  background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  background-color: transparent;
 }
 
 
@@ -145,8 +145,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     // -webkit-box-shadow: 8px 4px 5px 0px rgba(0,0,0,0.15);
     // -moz-box-shadow: 8px 4px 5px 0px rgba(0,0,0,0.15);
     // box-shadow: 8px 4px 5px 0px rgba(0,0,0,0.15);
-    
-
+  //  @include box-shadow(8px 4px 5px 0px rgba(0,0,0,0.15));
 }
 
 
