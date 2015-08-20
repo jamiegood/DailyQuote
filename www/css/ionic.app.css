@@ -7739,10 +7739,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   border-radius: 50%;
   margin-top: 10px;
   width: 50px;
-  height: 50px;
-  -webkit-box-shadow: 8px 4px 5px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 8px 4px 5px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 8px 4px 5px 0px rgba(0, 0, 0, 0.15); }
+  height: 50px; }
 
 .save {
   margin-right: 15px !important; }
