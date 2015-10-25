@@ -47,7 +47,7 @@ angular.module('starter.services', [])
     }
   }
 }])
-.factory('QuotesLibrary', function($window, $q, $timeout, $http) {
+.factory('QuotesLibrary', function($window, $q, $timeout, $http, config) {
   // Might use a resource here that returns a JSON array
 
   // function($resource){
@@ -94,7 +94,8 @@ angular.module('starter.services', [])
         // }, 4000);
 
       //Simple GET request example :
-      $http.get('api/quotes.json').
+      //$http.get('api/quotes.json').
+      $http.get(config.quotesApi).
         success(function(data, status, headers, config) {
           console.log(' am inside http ccall')
           console.log(data);
@@ -187,7 +188,7 @@ angular.module('starter.services', [])
       });
 
       console.log(findItem);
-      
+
       return findItem;
 
     }

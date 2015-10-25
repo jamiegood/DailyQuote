@@ -49,7 +49,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
 })
 // API config
 .constant('config', {
-  localStorageKey: 'favourites'
+  localStorageKey: 'favourites',
+  quotesApi: 'http://dailyquoteapi.herokuapp.com/quotes'
 })
 .config(['$ionicAppProvider', function($ionicAppProvider) {
   // Identify app
