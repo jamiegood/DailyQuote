@@ -1,11 +1,11 @@
 <ion-view view-title="Favourites">
-  
+
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-left" ng-repeat="quote in quotes track by $index" type="item-text-wrap" href="#/tab/favourites/{{quote.id}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-left" ng-repeat="quote in quotes track by $index" type="item-text-wrap" href="#/tab/favourites/{{quote.quote_id}}">
 
         <i class="icon ion-leaf" side="left"></i>
-        <p>{{quote.lastText}}</p>
+        <p>{{quote.text}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove($index)">

@@ -160,7 +160,7 @@ angular.module('starter.services', [])
       if(list !== '') {
         list_array = list.split("|");
         console.log(list_array);
-        console.log("list not enough to space");
+        //console.log("list not enough to space");
       }
       var i;
 
@@ -183,8 +183,8 @@ angular.module('starter.services', [])
       var findItem;
 
       angular.forEach(items, function(item) {
-        console.log(item);
-        if(item.id == id) findItem = item;
+        console.log("listing items in array: ",item);
+        if(item.quote_id == id) findItem = item;
       });
 
       console.log(findItem);
